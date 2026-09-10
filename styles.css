@@ -1,1081 +1,597 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-/* ================================
-CORES
-================================ */
 
-:root{
-    --orange: #f4a261;
-    --orange-dark: #e76f24;
-    --orange-light: #fff1e6;
-
-    --lime: #c8f238;
-    --lime-dark: #a9d51c;
-
-    --navy: #14253d;
-    --text: #40526a;
-    --gray: #718096;
-
-    --light: #fffaf6;
-    --white: #ffffff;
-
-    --border: #f1d8c5;
-
-}
-
-/* ================================
-RESET
-================================ */
+/* ================= VARIÁVEIS ================= */
 
 :root {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    --blue: #14253d;
+    --blue-light: #edf5fa;
+
+    --orange: #f4a261;
+    --orange-dark: #e76f24;
+
+    --white: #ffffff;
+
+    --gray: #687789;
+    --gray-light: #e7edf2;
+
+    --background: #f8fafc;
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-font-family: "DM Sans", sans-serif;
-color: var(--navy);
-background: var(--white);
-overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+
+    color: var(--blue);
+
+    background: var(--background);
+
+    line-height: 1.5;
 }
 
 a {
-text-decoration: none;
-color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
-.container {
-width: min(1180px, calc(100% - 50px));
-margin: auto;
-}
 
-/* ================================
-NAVBAR
-================================ */
-
-.navbar {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 76px;
-
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-padding: 0 6%;
-
-background: rgba(255, 255, 255, .88);
-backdrop-filter: blur(15px);
-
-border-bottom: 1px solid rgba(241, 216, 197, .7);
-
-z-index: 100;
-
-}
-
-.logo {
-font-family: "Space Grotesk";
-font-weight: 700;
-font-size: 20px;
-}
-
-.logo span {
-color: var(--lime-dark);
-margin: 0 4px;
-}
-
-.nav-links {
-display: flex;
-gap: 32px;
-}
-
-.nav-links a {
-font-size: 14px;
-color: var(--text);
-transition: .2s;
-}
-
-.nav-links a {
-color: var(--orange-dark);
-}
-
-.nav-button {
-padding: 11px 20px;
-
-background: var(--lime);
-
-border-radius: 8px;
-
-font-weight: 700;
-font-size: 14px;
-
-transition: .2s;
-
-}
-
-.nav-button {
-background: var(--lime-dark);
-transform: translateY(-2px);
-}
-
-/* ================================
-HERO
-================================ */
-
-.hero {
-min-height: 760px;
-
-padding: 150px 7% 80px;
-
-position: relative;
-overflow: hidden;
-
-display: flex;
-align-items: center;
-
-background:
-    linear-gradient(
-        120deg,
-        #fffaf6 0%,
-        #fff1e6 100%
-    );
-
-}
-
-.hero-content {
-width: 55%;
-
-position: relative;
-z-index: 2;
-
-}
-
-.hero-tag {
-display: inline-flex;
-align-items: center;
-
-gap: 9px;
-
-padding: 8px 13px;
-
-border-radius: 30px;
-
-background: white;
-border: 1px solid var(--border);
-
-color: var(--orange-dark);
-
-font-size: 11px;
-font-weight: 700;
-
-letter-spacing: 1.5px;
-
-margin-bottom: 25px;
-
-}
-
-.hero-tag span {
-width: 7px;
-height: 7px;
-
-border-radius: 50%;
-
-background: var(--lime);
-
-}
-
-.hero h1 {
-font-family: "Space Grotesk";
-
-font-size: clamp(58px, 7vw, 94px);
-
-line-height: .94;
-
-letter-spacing: -4px;
-
-max-width: 760px;
-
-}
-
-.hero h1 span {
-color: var(--orange-dark);
-
-position: relative;
-
-}
-
-.hero h1 span::after {
-content: "";
-
-position: absolute;
-
-width: 100%;
-height: 13px;
-
-bottom: -2px;
-left: 0;
-
-background: var(--lime);
-
-z-index: -1;
-
-transform: rotate(-2deg);
-
-}
-
-.hero-content > p {
-max-width: 520px;
-
-color: var(--text);
-
-font-size: 18px;
-
-margin: 30px 0;
-
-}
-
-.hero-buttons {
-display: flex;
-
-gap: 15px;
-
-align-items: center;
-
-}
-
-.main-button {
-display: flex;
-align-items: center;
-
-gap: 25px;
-
-padding: 15px 20px;
-
-border-radius: 9px;
-
-background: var(--navy);
-
-color: white;
-
-font-weight: 700;
-
-transition: .25s;
-
-}
-
-.main-button span {
-color: var(--lime);
-font-size: 22px;
-}
-
-.main-button {
-transform: translateY(-3px);
-}
-
-.secondary-button {
-padding: 15px 20px;
-
-color: var(--navy);
-
-font-weight: 600;
-
-}
-
-.hero-info {
-display: flex;
-align-items: center;
-
-gap: 25px;
-
-margin-top: 55px;
-
-}
-
-.hero-info div.info-line {
-display: flex;
-
-flex-direction: column;
-
-}
-
-.hero-info strong {
-font-family: "Space Grotesk";
-font-size: 18px;
-}
-
-.hero-info span {
-color: var(--gray);
-
-font-size: 11px;
-
-letter-spacing: 1px;
-
-}
-
-.info-line {
-width: 1px;
-height: 35px;
-
-background: var(--border);
-
-}
-
-/* ================================
-HERO VISUAL
-================================ */
-
-.hero-visual {
-position: absolute;
-
-right: 5%;
-
-width: 43%;
-height: 580px;
-
-}
-
-.circle-big {
-width: 480px;
-height: 480px;
-
-position: absolute;
-
-top: 40px;
-right: 20px;
-
-border-radius: 50%;
-
-background: var(--orange);
-
-}
-
-.circle-big::before {
-content: "";
-
-width: 350px;
-height: 350px;
-
-position: absolute;
-
-top: 65px;
-left: 65px;
-
-border-radius: 50%;
-
-background: var(--lime);
-
-}
-
-.circle-big::after {
-content: "";
-
-width: 210px;
-height: 210px;
-
-position: absolute;
-
-top: 135px;
-left: 135px;
-
-border-radius: 50%;
-
-background: var(--navy);
-
-}
-
-.floating-card {
-position: absolute;
-
-display: flex;
-align-items: center;
-
-gap: 12px;
-
-padding: 15px 20px;
-
-border-radius: 12px;
-
-background: white;
-
-box-shadow: 0 20px 50px rgba(20, 37, 61, .15);
-
-z-index: 5;
-
-}
-
-.floating-card span {
-font-size: 27px;
-}
-
-.floating-card div {
-display: flex;
-flex-direction: column;
-}
-
-.floating-card strong {
-font-size: 14px;
-}
-
-.floating-card small {
-color: var(--gray);
-}
-
-.card-one {
-top: 100px;
-left: 20px;
-}
-
-.card-two {
-right: 0;
-bottom: 130px;
-}
-
-.hero-number {
-position: absolute;
-
-right: 70px;
-bottom: 30px;
-
-color: white;
-
-font-size: 11px;
-font-weight: 700;
-
-letter-spacing: 2px;
-
-z-index: 5;
-
-}
-
-.hero-number span {
-display: block;
-
-font-family: "Space Grotesk";
-
-font-size: 80px;
-
-line-height: .8;
-
-color: var(--lime);
-
-}
-
-/* ================================
-SEÇÕES
-================================ */
+/* ================= SEÇÕES ================= */
 
 .section {
-padding: 120px 7%;
+    padding: 110px 8%;
 }
+
+
+/* ================= TÍTULOS ================= */
 
 .mini-title {
-color: var(--orange-dark);
+    font-size: 12px;
 
-font-size: 11px;
-font-weight: 700;
+    font-weight: 700;
 
-letter-spacing: 2px;
+    letter-spacing: 2px;
 
-margin-bottom: 18px;
+    color: var(--orange-dark);
 
+    margin-bottom: 18px;
 }
 
-.section-number {
-color: var(--lime-dark);
 
-font-family: "Space Grotesk";
-
-font-size: 15px;
-font-weight: 700;
-
-margin-bottom: 20px;
-
-}
-
-h2 {
-font-family: "Space Grotesk";
-
-font-size: clamp(43px, 5vw, 68px);
-
-line-height: 1;
-
-letter-spacing: -3px;
-
-}
-
-h2 span {
-color: var(--orange-dark);
-}
-
-/* ================================
-WORKSHOPS
-================================ */
+/* ================= WORKSHOPS ================= */
 
 .workshops {
-background: var(--white);
+    background: var(--blue);
+
+    color: var(--white);
 }
 
-.section-header {
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
 
-margin-bottom: 60px;
+/* Cabeçalho */
 
+.workshops .section-header {
+    margin-bottom: 60px;
 }
 
-.section-header > p {
-max-width: 350px;
-
-color: var(--gray);
-
-font-size: 15px;
-
+.workshops .mini-title {
+    color: var(--orange);
 }
+
+
+/* Grid */
 
 .workshop-grid {
-display: grid;
 
-grid-template-columns: repeat(3, 1fr);
+    display: grid;
 
-gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
 
-}
-
-.workshop-card {
-min-height: 280px;
-
-padding: 28px;
-
-background: var(--orange-light);
-
-border: 1px solid var(--border);
-
-border-radius: 15px;
-
-transition: .25s;
-
-}
-
-.workshop-card {
-transform: translateY(-6px);
-
-box-shadow: 0 18px 40px rgba(231, 111, 36, .12);
-
-}
-
-.workshop-card.green {
-background: var(--lime);
-border-color: var(--lime);
-}
-
-.workshop-top {
-display: flex;
-justify-content: space-between;
-
-margin-bottom: 55px;
-
-}
-
-.workshop-number {
-font-family: "Space Grotesk";
-
-font-size: 14px;
-font-weight: 700;
-
-color: var(--orange-dark);
-
-}
-
-.green .workshop-number {
-color: var(--navy);
-}
-
-.workshop-card h3 {
-font-family: "Space Grotesk";
-
-font-size: 23px;
-
-line-height: 1.1;
-
-}
-
-.workshop-card p {
-color: var(--gray);
-
-font-size: 13px;
-
-margin-top: 10px;
-
-}
-
-.workshop-label {
-display: inline-block;
-
-margin-top: 25px;
-
-padding: 5px 9px;
-
-border-radius: 20px;
-
-background: white;
-
-color: var(--orange-dark);
-
-font-size: 9px;
-font-weight: 700;
-
-letter-spacing: 1px;
-
-}
-
-.green .workshop-label {
-color: var(--navy);
-}
-
-/* ================================
-PROGRAMAÇÃO
-================================ */
-
-.schedule {
-background: white;
-}
-
-.schedule-header {
-margin-bottom: 60px;
-}
-
-.timeline {
-max-width: 1000px;
-}
-
-.timeline-item {
-display: grid;
-
-grid-template-columns: 180px 1fr;
-
-gap: 40px;
-
-padding: 25px 0;
-
-border-top: 1px solid var(--border);
-
-}
-
-.timeline-item {
-border-bottom: 1px solid var(--border);
-}
-
-.date {
-display: flex;
-
-flex-direction: column;
-
-font-family: "Space Grotesk";
-
-font-size: 21px;
-font-weight: 700;
-
-}
-
-.date span {
-color: var(--gray);
-
-font-family: "DM Sans";
-
-font-size: 10px;
-
-letter-spacing: 2px;
-
-}
-
-.timeline-content {
-position: relative;
-}
-
-.day-tag {
-display: inline-block;
-
-padding: 5px 9px;
-
-margin-bottom: 7px;
-
-border-radius: 20px;
-
-background: var(--orange-light);
-
-color: var(--orange-dark);
-
-font-size: 9px;
-font-weight: 700;
-
-letter-spacing: 1px;
-
-}
-
-.timeline-content h3 {
-font-family: "Space Grotesk";
-
-font-size: 23px;
-
-}
-
-.timeline-content p {
-color: var(--gray);
-
-font-size: 13px;
-
-margin-top: 3px;
-
-}
-
-.timeline-item.active {
-margin-left: -20px;
-margin-right: -20px;
-
-padding-left: 20px;
-padding-right: 20px;
-
-background: var(--lime);
-
-border-radius: 10px;
-
-border: none;
-
-}
-
-/* ================================
-PALESTRANTES
-================================ */
-
-.speakers {
-background: var(--light);
-}
-
-.speaker-grid {
-display: grid;
-
-grid-template-columns: repeat(2, 1fr);
-
-gap: 18px;
-
-}
-
-.speaker {
-display: flex;
-align-items: center;
-
-gap: 20px;
-
-padding: 20px;
-
-background: white;
-
-border: 1px solid var(--border);
-
-border-radius: 13px;
-
-}
-
-.speaker-photo {
-width: 85px;
-height: 85px;
-
-flex-shrink: 0;
-
-display: grid;
-place-items: center;
-
-border-radius: 10px;
-
-background: var(--orange);
-
-color: white;
-
-font-family: "Space Grotesk";
-
-font-size: 23px;
-font-weight: 700;
-
-}
-
-.green-photo {
-background: var(--lime);
-
-color: var(--navy);
-
-}
-
-.speaker h3 {
-font-family: "Space Grotesk";
-
-font-size: 19px;
-
-}
-
-.speaker p {
-color: var(--gray);
-
-font-size: 13px;
-
-}
-
-/* ================================
-CTA
-================================ */
-
-.cta {
-position: relative;
-
-min-height: 600px;
-
-display: flex;
-align-items: center;
-
-padding: 100px 7%;
-
-overflow: hidden;
-
-background: var(--navy);
-
-color: white;
-
-}
-
-.cta-content {
-position: relative;
-
-z-index: 3;
-
-}
-
-.cta .mini-title {
-color: var(--lime);
-}
-
-.cta h2 {
-max-width: 750px;
-}
-
-.cta h2 span {
-color: var(--lime);
-}
-
-.cta p {
-color: #aebbd0;
-
-margin: 25px 0;
-
-font-size: 18px;
-
-}
-
-.cta-button {
-display: inline-flex;
-align-items: center;
-
-gap: 30px;
-
-padding: 16px 20px;
-
-border-radius: 8px;
-
-background: var(--lime);
-
-color: var(--navy);
-
-font-weight: 700;
-
-transition: .2s;
-
-}
-
-.cta-button span {
-font-size: 22px;
-}
-
-.cta-button {
-background: white;
-
-transform: translateY(-3px);
-
-}
-
-.cta-circle {
-position: absolute;
-
-width: 650px;
-height: 650px;
-
-right: -180px;
-top: -120px;
-
-border-radius: 50%;
-
-border: 100px solid rgba(244, 162, 97, .15);
-
-}
-
-.cta-circle::after {
-content: "";
-
-position: absolute;
-
-width: 300px;
-height: 300px;
-
-top: 75px;
-left: 75px;
-
-border-radius: 50%;
-
-background: rgba(200, 242, 56, .12);
-
-}
-
-/* ================================
-FOOTER
-================================ */
-
-footer {
-display: flex;
-
-justify-content: space-between;
-align-items: center;
-
-padding: 25px 7%;
-
-background: #0d1b2e;
-
-color: #9daabd;
-
-font-size: 12px;
-
-}
-
-.footer-logo {
-font-family: "Space Grotesk";
-
-color: white;
-
-font-size: 16px;
-font-weight: 700;
-
-}
-
-.footer-logo span {
-color: var(--lime);
-}
-
-footer a {
-color: white;
-}
-
-/* ================================
-RESPONSIVO
-================================ */
-
-@media (max-width: 900px) {
-
-.nav-links {
-    display: none;
-}
-
-.hero {
-    padding: 130px 7% 70px;
-}
-
-.hero-content {
-    width: 100%;
-}
-
-.hero-visual {
-    opacity: .25;
-    right: -25%;
-}
-
-.section-header {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
 }
 
-.workshop-grid {
-    grid-template-columns: 1fr 1fr;
+
+/* Card */
+
+.workshop-card {
+
+    background: var(--white);
+
+    color: var(--blue);
+
+    min-height: 310px;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: 0.3s;
 }
 
+
+/* Card laranja */
+
+.workshop-card.orange-card {
+    background: var(--orange);
 }
 
-@media (max-width: 600px) {
 
-.section {
-    padding: 80px 6%;
+/* Efeito ao passar o mouse */
+
+.workshop-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.hero {
-    min-height: 700px;
+
+/* Parte superior do card */
+
+.workshop-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 40px;
 }
 
-.hero h1 {
-    font-size: 55px;
+
+/* Número */
+
+.workshop-number {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* Preço */
+
+.workshop-cost {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    padding: 6px 10px;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    border-radius: 20px;
+}
+
+
+/* Título */
+
+.workshop-card h3 {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+
+/* Descrição */
+
+.workshop-card p {
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Rodapé do card */
+
+.workshop-footer {
+
+    margin-top: auto;
+
+    padding-top: 14px;
+
+    border-top: 1px solid var(--gray-light);
+
+    font-size: 12px;
+
+    color: var(--gray);
+}
+
+
+/* ================= PROGRAMAÇÃO ================= */
+
+.schedule {
+
+    background: var(--blue-light);
+}
+
+
+/* Cabeçalho */
+
+.schedule-header {
+
+    margin-bottom: 70px;
+}
+
+
+/* Título */
+
+.schedule h2 {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1;
 
     letter-spacing: -3px;
 }
 
-.hero-buttons {
-    flex-direction: column;
+.schedule h2 span {
 
-    align-items: flex-start;
+    color: var(--orange-dark);
 }
 
-.hero-info {
-    margin-top: 35px;
+
+/* Timeline */
+
+.timeline {
+
+    max-width: 900px;
+
+    margin: auto;
 }
 
-.hero-visual {
-    right: -70%;
-}
 
-.section-header {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 20px;
-}
-
-.workshop-grid {
-    grid-template-columns: 1fr;
-}
+/* Cada item */
 
 .timeline-item {
-    grid-template-columns: 85px 1fr;
 
-    gap: 15px;
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 35px;
+
+    padding-bottom: 40px;
+
+    position: relative;
 }
 
-.timeline-item.active {
-    margin-left: 0;
-    margin-right: 0;
+
+/* Linha vertical */
+
+.timeline-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 74px;
+
+    top: 40px;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background: var(--orange);
 }
 
-.speaker-grid {
-    grid-template-columns: 1fr;
+
+/* Remove linha do último item */
+
+.timeline-item:last-child::before {
+
+    display: none;
 }
 
-footer {
-    flex-direction: column;
 
-    gap: 15px;
+/* Data */
 
-    align-items: flex-start;
+.date {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    text-align: right;
+
+    padding-top: 10px;
 }
+
+
+/* Dia da semana */
+
+.date span {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: var(--orange-dark);
+
+    letter-spacing: 1px;
+}
+
+
+/* Card da programação */
+
+.timeline-content {
+
+    background: var(--white);
+
+    padding: 25px 30px;
+
+    border-radius: 8px;
+
+    position: relative;
+
+    box-shadow: 0 5px 20px rgba(20, 37, 61, 0.06);
+
+    transition: 0.3s;
+}
+
+
+/* Efeito */
+
+.timeline-content:hover {
+
+    transform: translateX(5px);
+
+    box-shadow: 0 10px 25px rgba(20, 37, 61, 0.12);
+}
+
+
+/* Bolinha da timeline */
+
+.timeline-content::before {
+
+    content: "";
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    position: absolute;
+
+    left: -41px;
+
+    top: 31px;
+}
+
+
+/* Categoria do evento */
+
+.day-tag {
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+    color: var(--orange-dark);
+}
+
+
+/* Nome do evento */
+
+.timeline-content h3 {
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 23px;
+
+    margin: 8px 0;
+}
+
+
+/* Horário/local */
+
+.timeline-content p {
+
+    font-size: 13px;
+
+    color: var(--gray);
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--orange);
+
+    padding: 120px 8%;
+
+    text-align: center;
+}
+
+
+/* Círculo decorativo */
+
+.cta-circle {
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    position: absolute;
+
+    top: -350px;
+
+    right: -100px;
+
+    opacity: 0.1;
+}
+
+
+/* Conteúdo */
+
+.cta-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Botão */
+
+.cta-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    padding: 16px 25px;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+/* Hover */
+
+.cta-button:hover {
+
+    background: var(--white);
+
+    color: var(--blue);
+
+    transform: translateY(-3px);
+}
+
+
+/* Seta */
+
+.cta-button span {
+
+    font-size: 20px;
+}
+
+
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 900px) {
+
+    .workshop-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ================= CELULAR ================= */
+
+@media (max-width: 600px) {
+
+    .section {
+
+        padding: 80px 6%;
+    }
+
+
+    /* Workshops */
+
+    .workshop-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .workshop-card {
+
+        min-height: 280px;
+    }
+
+
+    /* Programação */
+
+    .schedule h2 {
+
+        font-size: 45px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .timeline-item {
+
+        grid-template-columns: 80px 1fr;
+
+        gap: 20px;
+    }
+
+
+    .timeline-item::before {
+
+        left: 89px;
+    }
+
+
+    .timeline-content::before {
+
+        left: -27px;
+    }
+
+
+    .timeline-content {
+
+        padding: 20px;
+    }
 
 }
